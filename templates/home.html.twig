@@ -1,0 +1,266 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CharacterController!{% endblock %}
+
+{% block body %}
+<div class="first" >
+
+
+    <div class="div_lvl">
+
+        <div class ="character">
+            <img src="img/character1.jpg" alt="" class="img_char">
+            <p>Niveaux 1</p>
+        </div>
+
+        <div>
+            <p>Karnage</p>
+            <p>Humain</p>
+            <p>Mage</p>
+        </div>
+        <div class="test">
+            <div class="exp">
+                <div class="exp_exp">
+                    <div id="experience">0</div>
+                    <div>/</div>
+                    <div id="max_exp">300</div>
+                </div>
+                <div class="xp_bar">
+                    <div id="div_xp" class="div_xp"></div>
+                </div>
+            </div>
+            
+            <div class="add_exp ">
+                <div class="five">
+                    <button class=" exp_color five_left" id="min_five">-</button>
+                    <div class="five_mid" id="plus_five">5</div>
+                    <button class=" five_right exp_color" id="max_five">+</button>
+                </div>
+                <div class="five">
+                    <button class=" exp_color five_left" id="min_ten">-</button>
+                    <div class="five_mid" id="plus_ten">10</div>
+                    <button class=" five_right exp_color" id="max_ten">+</button>
+                </div>
+                <div class="five">
+                    <button class=" exp_color five_left" id="min_fifty">-</button>
+                    <div class="five_mid" id="plus_fifty">50</div>
+                    <button class=" five_right exp_color"  id="max_fifty">+</button>
+                </div>
+                <div class="five">
+                    <button class=" exp_color five_left"  id="min_hundred">-</button>
+                    <div class="five_mid" id="plus_hundred">100</div>
+                    <button class=" five_right exp_color"  id="max_hundred">+</button>
+                </div>
+                            
+
+            </div>
+            
+        </div>
+
+</div>
+
+    <div class="life  black">  
+        <div class="initiative">
+            <div class="speed">   
+                <div><p>CA</p></div>
+                <div><p>14</p></div>
+            </div>
+            <div class="speed">
+                <div><p>Initiative</p></div>
+                <div><p>+1</p></div>    
+            </div>
+            <div class="speed"> 
+                <div><p>vitesse</p></div>
+                <div><p>9m</p></div>
+            </div>
+        </div>
+
+        <div class="point_life">
+            <p>Points de vie <button class="modify_life">+</button></p>
+            <div class="count">
+                <div id="count">0</div>
+                <div>/</div>
+                <div id="maxdiv">12</div>
+            </div>
+            
+            
+            <div class="button_life">
+                <div >
+                    <button class="damage" type="button" id="btnmin" >
+                        <img src="img/damage.png" alt="" class="red_heart">
+                    </button>
+                </div>
+
+
+                <div >
+                    <button class="heal" id="btnmax">
+                        <img src="img/heal.png" alt="" class="red_heart">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+<div class="teste1">
+<div class="second black">
+    
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">FORCE</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">DEXTERITE</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">CONSTITUTION</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">INTELLIGENCE</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">SAGESSE</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="margin_stats">+ 0</div>
+        <div class="margin_stats">CHARISME</div>
+        <div class="margin_stats">10</div>
+        <div class="stats_button">
+            <div><button>-</button></div>
+            <div><button>+</button></div>
+        </div>
+    </div>
+    
+</div>
+<div class="counter"><div></div><p>8</p></div>
+</div>
+<div class="second_part ">
+    <div  class="competences black background_image">
+    
+        <div>+1 Acrobatie ( Dex )</div>
+        <div>+1 Arcanes ( Int )</div>
+        <div>+1 Athlétisme ( For )</div>
+        <div>+1 Discrétion ( Dex )</div>
+        <div>+1 Dressage ( Sag )</div>
+        <div>+1 escamotage ( Dex )</div>
+        <div>+1 Histoire ( Int )</div>
+        <div>+1 Intimidation ( Cha )</div>
+        <div>+1 Intuition ( Sag )</div>
+        <div>+1 Investigation ( Int )</div>
+        <div>+1 Médecine ( Sag )</div>
+        <div>+1 Nature ( Int )</div>
+        <div>+1 Perception ( Sag )</div>
+        <div>+1 Persuatsion ( Cha )</div>
+        <div>+1 Religion ( Int )</div>
+        <div>+1 Représentation ( Cha )</div>
+        <div>+1 Survie (Sag )</div>
+        <div>+1 Tromperie ( Cha )</div>
+    </div>
+
+    <div class="equipement black">
+    
+        <div class="armor">
+            <div class="stuff">
+                <img src="img/casque.png" alt="" class="width_stuff">
+                <select name="armure" id=""> 
+                    <option value="casque">casque en cuir</option>             
+                </select>
+            </div>
+            <div class="stuff">
+                <img src="img/plastron.png" alt="" class="width_stuff">
+                <select name="armure" id=""> 
+                    <option value="plastron">plastron en vieu fer</option>             
+                </select>
+            </div>
+            <div class="stuff">
+                <img src="img/gants.png" alt="" class="width_stuff">
+                <select name="armure" id=""> 
+                    <option value="gant">vieux gant miteu</option>             
+                </select>
+            </div>
+            <div class="stuff"> 
+                <img src="img/botte.png" alt="" class="width_stuff">
+                <select name="armure" id=""> 
+                    <option value="botte">vieille botte usé</option>             
+                </select>
+            </div>
+        </div>
+        <div>
+            <div class="stuff weapons">
+                <img src="img/epee.png" alt="" class="width_stuff">
+                <select name="arme" id=""> 
+                    <option value="Hache">Hache</option>             
+                </select>
+
+            </div>
+            <div class="stuff weapons">
+                <img src="img/arc.png" alt="" class="width_stuff">
+                <select name="arme" id=""> 
+                    <option value="arc">Arc elfique</option>             
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="skills black">
+        <div>
+            <h2><strong><u> Mes sorts</u></strong></h2>
+            <div><input type="text" class="input_skills"></div>
+            <div><button>Ajoutez un sort</button></div>
+            
+        </div>
+    </div>
+</div>
+<div class="bag black">
+
+
+        <div>
+            
+            <div class="gold">
+            <div class="po"><strong >PO : 2</strong></div>
+            <div class="pa"><strong>PA : 57</strong></div>
+            <div class="pc"><strong>PC : 22 </strong></div>    
+        </div>
+            <textarea name="" id="" class="bag_text"></textarea>
+        </div>
+    </div>
+
+
+{% endblock %}

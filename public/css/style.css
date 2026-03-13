@@ -1,0 +1,388 @@
+*{
+box-sizing: border-box;
+}
+
+body{
+    background-image: url("/img/dragon.jpg") ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color :white;
+    font-family: "Wellfleet", serif;
+}
+
+/*#region user */
+
+.first{
+    display: flex;
+    justify-content: center;
+    margin-top: 10em;
+    font: color white;
+    
+}
+
+.div_lvl{
+    border-radius: 20px;
+    display: flex;    
+    gap: 1em;
+    width: 630px;
+    height:250px ;
+    margin-right: 3em;
+    padding: 2em 2em 2em 2em;
+    justify-content: space-around;
+    background: 
+        url("../img/rectangle.png") center / contain no-repeat;
+    background-size: 650px 250px;  
+}
+
+
+.black {
+    
+    margin-right: 3em;
+}
+
+
+.character{
+    display: flex;
+    flex-direction: column;
+}
+.img_char{
+    width: 100px;
+}
+
+.exp{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 2em;
+    padding-left: 8em;
+}
+
+.add_exp{
+    display: flex;
+    gap: 10px;
+    padding-bottom: 1em;
+    
+}
+.exp_color{
+    background-color: black;
+    color: white;
+    text-shadow:10px 5px 5px black ;
+}
+
+.five{
+    display: flex;
+}
+
+.five_left{
+border-radius: 10px 0px 0px 10px;
+background-color: rgb(56, 55, 55);
+width: 25px;
+padding: 5px 5px 5px 5px;
+border:none;
+cursor: pointer;
+}
+.five_left:active{
+    transform: scale(0.9);
+}
+.five_right:active{
+    transform: scale(0.9);
+}
+
+.five_right{
+border-radius: 0px 10px 10px 0px;
+background-color: rgb(56, 55, 55);
+border: none;
+padding: 0;
+cursor: pointer;
+width: 25px;
+padding: 5px 5px 5px 5px;
+}
+.five_mid{
+background-color: rgb(56, 55, 55);
+padding: 5px 5px 5px 5px;
+}
+.exp_scale{
+    background-color: rgb(56, 55, 55);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s ;
+    width: 20px;
+    padding: 5px 5px 5px 5px;
+    box-shadow:10px 5px 5px black ;
+    
+}
+.exp_scale:active{
+    transform: scale(0.9);
+}
+
+.exp_exp{
+    display: flex;
+}
+
+.test{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_xp{
+    height:100%;
+    width:0%;
+    background-color:rgb(7,158,26);
+
+}
+.xp_bar{
+    width:200px;
+    height:20px;
+    background-color:#0f0f0f;
+    border-radius:10px;
+    overflow:hidden;
+}
+/*#endregion  user*/
+/*#region  life*/
+.life{
+    display: flex;
+    padding-top: 1em;
+    padding-left: 1em;
+    width: 580px;
+    gap: 1em;
+    justify-content: space-evenly;
+    text-align: center;
+    background: 
+        url("../img/rectangle.png") center / contain no-repeat;
+    background-size: 600px 250px;  
+
+}
+
+.initiative{
+    display: flex;
+    gap: 2em;
+    align-items: start;
+    padding-top: 1em;
+}
+
+
+.speed{
+    gap: 1em;
+}
+.point_life{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    
+}
+
+.count{
+    display: flex;
+}
+
+.modify_life{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s ;
+    color: white;
+}
+.button_life{
+    display: flex;
+    gap: 10px;
+}
+
+
+.damage,
+.heal{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s ;
+    
+}
+.damage:active,
+.heal:active{
+    transform: scale(0.9);
+}
+.red_heart{
+    width: 100px;
+    
+}
+/*#endregion  life*/
+/*#region stats*/
+.second{
+
+    display: flex;
+    gap: 3em;        
+    margin-top: 1.5em;
+    width: 980px;
+    height: 260px;
+    justify-content: center;
+    margin-left: 29em;
+    margin-bottom: 3em;
+    padding: 1em 1em 1em 1em;
+    text-align: center;
+    background: 
+        url("../img/rectangle.png") center / contain no-repeat;
+    background-size: 1010px 250px;  
+}
+
+.teste1{
+    display: flex;
+    
+}
+
+.counter{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background-color:rgb(56, 55, 55); 
+    margin-top: 8.5em;
+    margin-bottom: 3em;
+    border-radius: 20px;
+    box-shadow:10px 5px 5px black ;
+}
+
+
+.stats{
+    width: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    
+}
+
+.stats_button{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.margin_stats{
+    margin-bottom: 1em;
+}
+/*#endregion  stats*/
+/*#region  skill*/
+
+.second_part{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.competences{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:475px ;
+    height:600px ;
+    padding: 5em 1em 1em 1em;
+    background: 
+        url("../img/bordure.png") center / contain no-repeat;
+    background-size: 450px 600px; }
+
+/*#endregion  skill*/
+/*#region  armor*/
+
+.equipement{
+    display: flex;
+    width: 700px;
+    justify-content:center;
+    padding-top: 5em;
+    background: 
+        url("../img/bordure.png") center / contain no-repeat;
+    background-size: 650px 600px;
+}
+
+.armor{
+    display: flex;
+    flex-direction: column;    
+    align-items:first baseline;
+    gap: 1em;
+    padding-left: 1em;
+    
+    
+}
+
+.stuff{
+    display: flex;
+    align-items: center;
+}
+
+.width_stuff{
+    width: 70px;
+}
+
+.weapons{
+    padding-right: 2em;
+    padding-left: 2em;
+}
+/*#endregion  armor*/
+/*#region  skills*/
+.skills{
+    width:475px ;
+    height:600px ;
+    padding-top: 5em;
+    display: flex;
+        flex-direction: column;
+    text-align: center;
+    background: 
+        url("../img/bordure.png") center / contain no-repeat;
+    background-size: 450px 600px;  
+    
+
+}
+
+.input_skills{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 1em;
+}
+/*#endregion  skills*/
+/*#region  bag*/
+.bag{
+
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    margin-top: 3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    background: 
+        url("../img/rectangle.png") center / contain no-repeat;
+    background-size: 750px 380px;
+    
+    
+}
+.bag_text{
+    width: 500px;
+    height: 220px;
+}
+.gold{
+    display: flex;
+    gap: 1em;
+    padding-top: 4em;
+    padding-bottom: 1em;
+    padding-left:1em;
+}
+
+.po{
+    color: gold;
+}
+
+.pa{
+    color: silver;
+}
+
+.pc{
+    color: rgb(252, 101, 0);
+}
+
+/*#endregion  bag*/
