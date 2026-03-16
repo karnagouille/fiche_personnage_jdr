@@ -33,7 +33,7 @@ const plusTen = document.getElementById('plus_ten');
 
 maxTen.addEventListener('click',()=>{
 
-if(Number(experience.innerText)+10 < Number (maxExp.innerText)){
+if(Number(experience.innerText)+10 <= Number (maxExp.innerText)){
     experience.innerHTML=Number(experience.innerText)+10
     barrexp();
 }
@@ -57,7 +57,7 @@ const plusFifty = document.getElementById('plus_fifty');
 
 maxFifty.addEventListener('click',()=>{
 
-if(Number(experience.innerText)+50 < Number (maxExp.innerText)){
+if(Number(experience.innerText)+50 <= Number (maxExp.innerText)){
     experience.innerHTML=Number(experience.innerText)+50
     barrexp();
 }
@@ -80,7 +80,7 @@ const plusHundred = document.getElementById('plus_hundred');
 
 maxHundred.addEventListener('click',()=>{
 
-if(Number(experience.innerText)+100 < Number (maxExp.innerText)){
+if(Number(experience.innerText)+100 <= Number (maxExp.innerText)){
     experience.innerHTML=Number(experience.innerText)+100
     barrexp();
 }
@@ -121,4 +121,110 @@ btnmin.addEventListener('click',()=>{
     
     }
 );
-//------------------------------------
+
+
+
+
+
+const boutonPlus = document.querySelectorAll('.statmax')
+
+boutonPlus.forEach(bouton =>{
+    bouton.addEventListener('click',()=>{
+        const blockStat = bouton.closest(".stats"); // closest remonte et regarde le parents dans la hierarchie
+        const valeur = blockStat.querySelector('.statcount');
+        const counter = document.querySelector('.counter');
+        if(Number(valeur.innerText)<15 && Number(counter.innerText)>0) {
+            valeur.innerText = Number(valeur.innerText)+1 ;
+            counter.innerText = Number(counter.innerText)-1 ;
+        };
+    });
+})
+
+const boutonmoins = document.querySelectorAll('.statmin');
+
+boutonmoins.forEach(bouton =>{
+    bouton.addEventListener('click',()=>{
+        const blockstat = bouton.closest('.stats');
+        const valeur = blockstat.querySelector('.statcount');
+        const counter = document.querySelector('.counter');
+        if(Number(valeur.innerText)>8 && Number(valeur.innerText )<=15) {
+            valeur.innerText = Number(valeur.innerText)-1
+            counter.innerText = Number(counter.innerText)+1
+        };
+    })
+})
+
+
+
+
+
+
+
+
+
+/*
+const statsmax1 = document.getElementById('statsmax1');
+const statsmin1 = document.getElementById('statsmin1');
+const statscount1 = document.getElementById('statscount1');
+
+statsmax1.addEventListener('click',()=>{
+    if(Number(statscount1.innerText)< 15) {
+        statscount1.innerText = Number(statscount1.innerText)+1
+    };
+});
+
+
+
+const statsmax2 = document.getElementById('statsmax2');
+const statsmin2 = document.getElementById('statsmin2');
+const statscount2 = document.getElementById('statscount2');
+
+statsmax2.addEventListener('click',()=>{
+    if(Number(statscount2.innerText)< 15) {
+        statscount2.innerText = Number(statscount2.innerText)+1
+    };
+});
+
+
+const statsmax3 = document.getElementById('statsmax3');
+const statsmin3 = document.getElementById('statsmin3');
+const statscount3 = document.getElementById('statscount3');
+
+statsmax3.addEventListener('click',()=>{
+    if(Number(statscount3.innerText)< 15) {
+        statscount3.innerText = Number(statscount3.innerText)+1
+    };
+});
+
+
+const statsmax4 = document.getElementById('statsmax4');
+const statsmin4 = document.getElementById('statsmin4');
+const statscount4 = document.getElementById('statscount4');
+
+statsmax4.addEventListener('click',()=>{
+    if(Number(statscount4.innerText)< 15) {
+        statscount4.innerText = Number(statscount4.innerText)+1
+    };
+});
+const statsmax5 = document.getElementById('statsmax5');
+const statsmin5 = document.getElementById('statsmin5');
+const statscount5 = document.getElementById('statscount5');
+
+statsmax5.addEventListener('click',()=>{
+    if(Number(statscount5.innerText)< 15) {
+        statscount5.innerText = Number(statscount5.innerText)+1
+    };
+});
+
+
+const statsmax6 = document.getElementById('statsmax6');
+const statsmin6 = document.getElementById('statsmin6');
+const statscount6 = document.getElementById('statscount6');
+
+statsmax6.addEventListener('click',()=>{
+    if(Number(statscount6.innerText)< 15) {
+        statscount6.innerText = Number(statscount6.innerText)+1
+    };
+});
+
+*/
