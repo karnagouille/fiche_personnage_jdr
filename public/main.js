@@ -155,13 +155,6 @@ boutonmoins.forEach(bouton =>{
 })
 
 
-
-
-
-
-
-
-
 /*
 const statsmax1 = document.getElementById('statsmax1');
 const statsmin1 = document.getElementById('statsmin1');
