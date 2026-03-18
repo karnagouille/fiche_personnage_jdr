@@ -155,6 +155,92 @@ boutonmoins.forEach(bouton =>{
 })
 
 
+
+const bouton1 =document.querySelectorAll('.bonus1');
+
+bouton1.forEach(bouton => {
+
+    bouton.addEventListener('click',()=>{
+
+    const blockstat = bouton.closest('.stats');
+    const statcount = blockstat.querySelector('.statcount');
+
+    const ancien = document.querySelector('.activeBonus1');
+    
+    if(ancien && ancien !== blockstat){
+        ancien.classList.remove('activeBonus1');
+        const ancienstatcount = ancien.querySelector('.statcount');
+        ancienstatcount.innerText = Number(ancienstatcount.innerText)-1;
+    }
+
+        if(!blockstat.classList.contains('activeBonus1')){
+            blockstat.classList.add('activeBonus1');
+            statcount.innerText = Number(statcount.innerText)+1;
+        }
+
+    
+})
+    
+})
+
+
+
+
+
+
+
+
+const bouton2 =document.querySelectorAll('.bonus2');
+
+bouton2.forEach(bouton => {
+
+    bouton.addEventListener('click',()=>{
+
+    const blockstat = bouton.closest('.stats');
+    const statcount = blockstat.querySelector('.statcount');
+
+    const ancien = document.querySelector('.activeBonus2');
+    
+    if(ancien && ancien !== blockstat){
+        ancien.classList.remove('activeBonus2');
+        const ancienstatcount = ancien.querySelector('.statcount');
+        ancienstatcount.innerText = Number(ancienstatcount.innerText)-2;
+    }
+
+        if(!blockstat.classList.contains('activeBonus2')){
+            blockstat.classList.add('activeBonus2');
+            statcount.innerText = Number(statcount.innerText)+2;
+        }
+
+    
+})
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 const statsmax1 = document.getElementById('statsmax1');
 const statsmin1 = document.getElementById('statsmin1');
@@ -221,3 +307,5 @@ statsmax6.addEventListener('click',()=>{
 });
 
 */
+
+
