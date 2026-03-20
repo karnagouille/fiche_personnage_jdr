@@ -220,21 +220,29 @@ bouton1.forEach(bouton => {
 
     const blockstat = bouton.closest('.stats');
     const statcount = blockstat.querySelector('.statcount');
+    const affichageBonus = blockstat.querySelector('.bonus_display');
 
     const ancien = document.querySelector('.activeBonus1');
     const valeur = blockstat.querySelector('.statcount');
     const statType = blockstat.dataset.stat;
-    console.log(statType);
+    
     if(ancien && ancien !== blockstat){
         ancien.classList.remove('activeBonus1');
+
         const ancienstatcount = ancien.querySelector('.statcount');
+        const ancienAffichage = ancien.querySelector('.bonus_display');
+
         ancienstatcount.innerText = Number(ancienstatcount.innerText)-1;
+        ancienAffichage.innerText = "+0";
         
     }
 
         if(!blockstat.classList.contains('activeBonus1')){
             blockstat.classList.add('activeBonus1');
+
             statcount.innerText = Number(statcount.innerText)+1;
+            affichageBonus.innerText = "+1";
+            
             update(valeur,statType);
         }
     
@@ -244,36 +252,44 @@ bouton1.forEach(bouton => {
 
 
 // BONUS +2
-
-const bouton2 =document.querySelectorAll('.bonus2');
+const bouton2 = document.querySelectorAll('.bonus2');
 
 bouton2.forEach(bouton => {
 
     bouton.addEventListener('click',()=>{
 
-    const blockstat = bouton.closest('.stats');
-    const statcount = blockstat.querySelector('.statcount');
+        const blockstat = bouton.closest('.stats');
+        const statcount = blockstat.querySelector('.statcount');
+        const affichageBonus = blockstat.querySelector('.bonus_display');
 
-    const ancien = document.querySelector('.activeBonus2');
-    
-    if(ancien && ancien !== blockstat){
-        ancien.classList.remove('activeBonus2');
-        const ancienstatcount = ancien.querySelector('.statcount');
-        ancienstatcount.innerText = Number(ancienstatcount.innerText)-2;
-    }
+        const ancien = document.querySelector('.activeBonus2');
+        const valeur = blockstat.querySelector('.statcount');
+        const statType = blockstat.dataset.stat;
 
-        if(!blockstat.classList.contains('activeBonus2')){
-            blockstat.classList.add('activeBonus2');
-            statcount.innerText = Number(statcount.innerText)+2;
-            update(statcount, blockstat.dataset.stat);
-            
+        // 🔁 retirer ancien bonus
+        if(ancien && ancien !== blockstat){
+            ancien.classList.remove('activeBonus2');
+
+            const ancienstatcount = ancien.querySelector('.statcount');
+            const ancienAffichage = ancien.querySelector('.bonus_display');
+
+            ancienstatcount.innerText = Number(ancienstatcount.innerText)-2;
+            ancienAffichage.innerText = "+0";
         }
 
-    
-})
-    
-})
+        // ➕ ajouter nouveau bonus
+        if(!blockstat.classList.contains('activeBonus2')){
+            blockstat.classList.add('activeBonus2');
 
+            statcount.innerText = Number(statcount.innerText)+2;
+            affichageBonus.innerText = "+2";
+
+            update(valeur, statType);
+        }
+
+    });
+
+});
 
 
 
