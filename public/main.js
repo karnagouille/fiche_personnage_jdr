@@ -124,7 +124,7 @@ btnmin.addEventListener('click',()=>{
 
 
 
-
+// CONPTEUR STATS
 
 const boutonPlus = document.querySelectorAll('.statmax')
 
@@ -133,12 +133,18 @@ boutonPlus.forEach(bouton =>{
         const blockStat = bouton.closest(".stats"); // closest remonte et regarde le parents dans la hierarchie
         const valeur = blockStat.querySelector('.statcount');
         const counter = document.querySelector('.counter');
+        const statType = blockStat.dataset.stat;
         if(Number(valeur.innerText)<15 && Number(counter.innerText)>0) {
             valeur.innerText = Number(valeur.innerText)+1 ;
+            update(valeur,statType);
             counter.innerText = Number(counter.innerText)-1 ;
         };
+        
     });
+    
 })
+
+
 
 const boutonmoins = document.querySelectorAll('.statmin');
 
@@ -147,14 +153,64 @@ boutonmoins.forEach(bouton =>{
         const blockstat = bouton.closest('.stats');
         const valeur = blockstat.querySelector('.statcount');
         const counter = document.querySelector('.counter');
+        const statType = blockstat.dataset.stat;
         if(Number(valeur.innerText)>8 && Number(valeur.innerText )<=15) {
             valeur.innerText = Number(valeur.innerText)-1
+            update(valeur,statType);
             counter.innerText = Number(counter.innerText)+1
         };
     })
 })
 
 
+
+// UPDATE COMPETENCE
+
+
+let ancien = {};
+
+function update(valeur, statType){
+console.log(valeur, statType);
+    let nouveau = Number(valeur.innerText);
+    let ancienValeur = ancien[statType];
+
+if (ancienValeur === undefined) {
+    ancienValeur = nouveau - 1;
+}
+
+    const element = document.querySelectorAll('[data-stat="' + statType + '"]');
+
+    if (nouveau % 2===0 && nouveau > ancienValeur){
+
+    element.forEach(el=>{
+    let val = Number(el.innerText);
+
+    if (!isNaN(val)) {
+        el.innerText = val + 1;
+    }
+});
+
+    }
+
+    if (nouveau % 2===0 && nouveau < ancienValeur){
+    
+    element.forEach(el=>{
+    let val = Number(el.innerText);
+
+    if (!isNaN(val)) {
+        el.innerText = val - 1;
+    }
+});
+
+    }
+    
+    ancien[statType] = nouveau;
+}
+
+
+
+
+// BONUS +1
 
 const bouton1 =document.querySelectorAll('.bonus1');
 
@@ -166,29 +222,28 @@ bouton1.forEach(bouton => {
     const statcount = blockstat.querySelector('.statcount');
 
     const ancien = document.querySelector('.activeBonus1');
-    
+    const valeur = blockstat.querySelector('.statcount');
+    const statType = blockstat.dataset.stat;
+    console.log(statType);
     if(ancien && ancien !== blockstat){
         ancien.classList.remove('activeBonus1');
         const ancienstatcount = ancien.querySelector('.statcount');
         ancienstatcount.innerText = Number(ancienstatcount.innerText)-1;
+        
     }
 
         if(!blockstat.classList.contains('activeBonus1')){
             blockstat.classList.add('activeBonus1');
             statcount.innerText = Number(statcount.innerText)+1;
+            update(valeur,statType);
         }
-
     
 })
     
 })
 
 
-
-
-
-
-
+// BONUS +2
 
 const bouton2 =document.querySelectorAll('.bonus2');
 
@@ -210,12 +265,51 @@ bouton2.forEach(bouton => {
         if(!blockstat.classList.contains('activeBonus2')){
             blockstat.classList.add('activeBonus2');
             statcount.innerText = Number(statcount.innerText)+2;
+            update(statcount, blockstat.dataset.stat);
+            
         }
 
     
 })
     
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
