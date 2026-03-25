@@ -12,15 +12,32 @@ body{
 }
 
 /*#region user */
+.creation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    
+    
+}
+.btn_creation{
+    width: 100px;
+    position:sticky;
+    border-radius: 10px;
+    color: rgb(239, 238, 243);
+    background-color: cornflowerblue;
+}
+
 
 .first{
     display: flex;
-    justify-content: center;
-    margin-top: 10em;
+    justify-content:center;
     font: color white;
     
 }
-
+.both{
+    display: flex;
+}
 .div_lvl{
     border-radius: 20px;
     display: flex;    
@@ -30,11 +47,34 @@ body{
     margin-right: 3em;
     padding: 2em 2em 2em 2em;
     justify-content: space-around;
-    background: 
-        url("../img/rectangle.png") center / contain no-repeat;
+    background:url("../img/rectangle.png") center / contain no-repeat;
     background-size: 650px 250px;  
 }
 
+.skill_class{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+}
+
+.class_profil{
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.all_classes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.classes{
+    display: flex;
+    gap: 0.5em;
+    
+
+}
 
 .black {
     
@@ -221,21 +261,35 @@ padding: 5px 5px 5px 5px;
     margin-top: 1.5em;
     width: 980px;
     height: 260px;
-    justify-content: center;
-    margin-left: 29em;
+    justify-content: center;    
     margin-bottom: 3em;
     padding: 1em 1em 1em 1em;
     text-align: center;
-    background: 
-        url("../img/rectangle.png") center / contain no-repeat;
+    background:url("../img/rectangle.png") center / contain no-repeat;
     background-size: 1010px 250px;  
 }
 
 .teste1{
     display: flex;
+    justify-content: center;
+    margin-right: 8em;
     
 }
 
+.save{
+    padding-left:5em;
+    padding-top: 3em;
+    width: 300px;
+    height: 300px;
+    background:url("../img/bordure.png") center / contain no-repeat;
+    background-size: 250px 300px; 
+}
+
+.sav_2{
+    display: flex;
+    gap: 1em;
+
+}
 .counter0{
 display: flex;
 align-items: center;
@@ -249,8 +303,7 @@ padding-bottom: 2em;
     align-items: center;
     width: 100px;
     height: 100px;
-    background: 
-        url("../img/rond.png") center / contain no-repeat;
+    background:url("../img/rond.png") center / contain no-repeat;
     background-size: 100px 100px; 
 }
 
@@ -289,7 +342,8 @@ padding-bottom: 2em;
 
 .second_part{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    margin-left: 6em;
     
     
 }
@@ -298,8 +352,7 @@ padding-bottom: 2em;
     width:475px ;
     height:600px ;
     padding: 7em 1em 1em 9em;
-    background: 
-        url("../img/bordure.png") center / contain no-repeat;
+    background:url("../img/bordure.png") center / contain no-repeat;
     background-size: 450px 600px; }
 
     .bonusstat{

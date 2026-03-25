@@ -1,4 +1,70 @@
 
+
+
+document.querySelector('#btn1').onclick = function() {
+    document.querySelector('#content1').style.display = "block";
+    document.querySelector('#content2').style.display = "none";
+    document.querySelector('#content3').style.display = "none";
+};
+
+document.querySelector('#btn2').onclick = function() {
+    document.querySelector('#content1').style.display = "none";
+    document.querySelector('#content2').style.display = "block";
+    document.querySelector('#content3').style.display = "none";
+};
+document.querySelector('#btn3').onclick = function() {
+    document.querySelector('#content1').style.display = "none";
+    document.querySelector('#content2').style.display = "none";
+    document.querySelector('#content3').style.display = "block";
+};
+
+
+
+
+
+
+const allClass= document.querySelectorAll('.class_skill');
+const allSkill = document.querySelectorAll('.skill_class')
+
+
+allClass.forEach(input =>{
+
+
+    input.addEventListener('click',()=>{
+        
+        const valeur = input.dataset.skill;
+
+        allSkill.forEach(div => {
+    
+        if(div.dataset.skill === valeur ){
+            div.style.display="block"
+        }else{
+            div.style.display="none"
+        }
+        });
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // boutton +5
 const minFive = document.getElementById('min_five');
 const maxFive = document.getElementById('max_five');
@@ -170,14 +236,13 @@ boutonmoins.forEach(bouton =>{
 let ancien = {};
 
 function update(valeur, statType){
-console.log(valeur, statType);
+
     let nouveau = Number(valeur.innerText);
     let ancienValeur = ancien[statType];
 
 if (ancienValeur === undefined) {
     ancienValeur = nouveau - 1;
 }
-
     const element = document.querySelectorAll('[data-stat="' + statType + '"]');
 
     if (nouveau % 2===0 && nouveau > ancienValeur){
@@ -304,53 +369,6 @@ bouton2.forEach(bouton => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 const statsmax1 = document.getElementById('statsmax1');
 const statsmin1 = document.getElementById('statsmin1');
@@ -419,3 +437,115 @@ statsmax6.addEventListener('click',()=>{
 */
 
 
+/* enregistrement desinput  dans le naavigateur MAIS BEAUCOUP TROP COMPLIQUER POUR MOI TMTC
+registerStats()
+
+function registerStats() {
+    // id_bouton: bonus_ou_malus_experience
+    const table = {
+        min_five: -5,
+        min_ten: -10,
+        min_fifty: -50,
+        min_hundred: -100,
+        max_five: 5,
+        max_ten: 10,
+        max_fifty: 50,
+        max_hundred: 100,
+    };
+
+    for(const id in table) {
+        const element = document.getElementById(id)
+        const experienceToAdd = table[id]
+
+        element.addEventListener('click', () => {
+            const experience = localStorage.getItem('player.experience') !== null ? parseInt(localStorage.getItem('player.experience')) : 0
+            localStorage.setItem('player.experience', experience + experienceToAdd)
+
+            console.log(localStorage.getItem('player.experience'))
+        })
+    }
+}
+*/
+
+// function add(a, b) {
+//     return a + b
+// }
+
+// function add(a: number, b: number): number {
+//     return a + b
+// }
+
+// add(null, null)
+// add("patate", ['array'])
+
+/**
+ * Sauvegarde les statistiques "experience"
+ */
+function saveProfile() {
+    const experienceElement = document.getElementById('experience')
+    const experience = Number(experienceElement.innerText)
+
+    localStorage.setItem('player.profile', experience)
+}
+
+/**
+ * Sauvegarde les statistiques "CA", "Initiative", "Vitesse", "Points de vie"
+ */
+function saveHealthPoints() {
+    const armorClassElement = document.getElementById('armor-class')
+    const initiativeElement = document.getElementById('initiative')
+    const speedElement = document.getElementById('speed')
+    const healthPointElement = document.getElementById('health-point')
+
+    const armorClass = Number(armorClassElement.innerText)
+    const initiative = Number(initiativeElement.innerText)
+    const speed = Number(speedElement.innerText)
+    const healthPoint = Number(healthPointElement.innerText)
+
+    localStorage.setItem('player.healthPoints', {
+        armorClass: armorClass,
+        initiative: initiative,
+        speed: speed,
+        healthPoint: healthPoint,
+    })
+    /*
+        On sauvegarde donc ça :
+        {
+            player.healthPoints: {
+                armorClass: 14,
+                initiative: 1,
+                speed: 9,
+                healthPoints: 0,
+            } 
+        }
+        qu'on peut récupérer via "localStorage.getItem('player.healthPoints')"
+    */
+
+    // localStorage.setItem('patate', 10)
+    // le navigateur stocke ça comme ça :
+    // {
+    //   patate: 10,
+    // }
+    // quand tu veux le récupérer :
+    // localStorage.getItem('patate')
+}
+/*
+function saveStats() {}
+
+// const statsElements = document.querySelectorAll('.character-stat')
+// statsElements.forEach((element) => {
+//     const stat = Number(element.innerText)
+
+//     if(element.classList.contains('experience')) {
+//         localStorage.setItem('player.experience', stat)
+//     }
+
+//     if(element.classList.contains('dexterity')) {
+//         localStorage.setItem('player.dexterity', stat)
+//     }
+
+//     if(element.classList.contains('strength')) {
+//         localStorage.setItem('player.strength', stat)
+//     }
+// })
+    */
