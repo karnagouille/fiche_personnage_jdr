@@ -21,42 +21,123 @@ document.querySelector('#btn3').onclick = function() {
 
 
 
+//
+
+const allClass= document.querySelectorAll('.class_skill');  // récupére toute les classes
+const allSkill = document.querySelectorAll('.skill_class') // récupére les content qui seront lié au classes
 
 
-const allClass= document.querySelectorAll('.class_skill');
-const allSkill = document.querySelectorAll('.skill_class')
+allClass.forEach(input =>{// a chaque input je veux définir une action au click
 
 
-allClass.forEach(input =>{
-
-
-    input.addEventListener('click',()=>{
+    input.addEventListener('click',()=>{ 
         
-        const valeur = input.dataset.skill;
+        const valeur = input.dataset.skill; // au click je récupére le dataset de chaque input
 
-        allSkill.forEach(div => {
+        skillSave(valeur);// function jet de sauvegarde
+
+        allSkill.forEach(div => { // ensuite je veux boucler sur les div de mes content
     
-        if(div.dataset.skill === valeur ){
-            div.style.display="block"
+        if(div.dataset.skill === valeur ){// si le dataset de mon content et égal au dataset de mon input clické 
+            div.style.display="block" // je l'affiche
         }else{
-            div.style.display="none"
+            div.style.display="none" // sinon je le cache
         }
         });
     })
 })
 
 
+const inputCheck = document.querySelectorAll('.input_check');
+
+inputCheck.forEach(input => {
+
+    input.addEventListener('click', () => {
+
+        let compteur = 0;
+
+        // 🔥 on récupère le bloc du input cliqué
+        const parent = input.closest('.skill_class');
+
+        // 🔥 on récupère seulement les checkbox de CE bloc
+        const checkboxes = parent.querySelectorAll('.input_check');
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                compteur++;
+            }
+        });
+
+        if (compteur > 2) {
+            input.checked = false;
+        }
+
+    });
+
+});
 
 
 
 
+const Classes = {
+    barbare: ["force", "constitution"],
+    guerrier: ["force", "constitution"],
+    roublard: ["dexterite", "intelligence"],
+    moine: ["force", "dexterite"],
+    magicien: ["intelligence", "sagesse"],
+    ensorceleur: ["constitution", "charisme"],
+    occultiste: ["sagesse", "charisme"],
+    clerc: ["sagesse", "charisme"],
+    paladin: ["sagesse", "charisme"],
+    rodeur: ["force", "dexterite"],
+    druide: ["intelligence", "sagesse"],
+    barde: ["dexterite", "charisme"],
+};
+
+// Ajout du bonus de jet de sauvegarde
+
+function skillSave(classe) {
+    document.querySelectorAll('[data-save]').forEach(el => {
+        el.textContent = 0;
+    });
+
+    classe = classe.toLowerCase();
+
+    let bonus = Classes[classe];
+
+    for (let i = 0; i < bonus.length; i++) {
+    let stat = bonus[i];
+
+    let element = document.querySelector(`[data-save="${stat}"]`);
+
+    // ici tu modifies la stat (ex: +2)
+    let value = parseInt(element.textContent);
+    element.textContent = value + 2;
+    }
+}
 
 
+const inputs = document.querySelectorAll('.input_check');
 
+inputs.forEach(input => {
 
+    input.addEventListener('click', () => {
 
+        let competence = input.dataset.competence;
 
+        let element = document.querySelector(`.competences [data-competence="${competence}"]`);
 
+        let value = parseInt(element.textContent);
+
+        if (input.checked) {
+            element.textContent = value + 1;
+        } else {
+            element.textContent = value - 1;
+        }
+
+    });
+
+});
 
 
 

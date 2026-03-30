@@ -47,6 +47,7 @@ body{
     margin-right: 3em;
     padding: 2em 2em 2em 2em;
     justify-content: space-around;
+    align-items: center;
     background:url("../img/rectangle.png") center / contain no-repeat;
     background-size: 650px 250px;  
 }
@@ -56,6 +57,7 @@ body{
     flex-direction: column;
     gap: 1em;
     justify-content: center;
+    align-items: center
 }
 
 .class_profil{
@@ -72,7 +74,6 @@ body{
 .classes{
     display: flex;
     gap: 0.5em;
-    
 
 }
 
@@ -394,6 +395,10 @@ padding-bottom: 2em;
 .weapons{
     padding-right: 2em;
     padding-left: 2em;
+}
+
+.input_armor{
+    width: 100px;
 }
 /*#endregion  armor*/
 /*#region  skills*/
