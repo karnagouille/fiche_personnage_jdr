@@ -11,8 +11,10 @@ final class CharacterController extends AbstractController
     #[Route('/', name: 'character')]
     public function index(): Response
     {
+        $user = $this->getUser();
         return $this->render('home.html.twig', [
             'controller_name' => 'CharacterController',
+            'player' => $user
         ]);
     }
 }

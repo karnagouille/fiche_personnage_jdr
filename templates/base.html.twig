@@ -17,6 +17,17 @@
         {% endblock %}
     </head>
     <body>
+    <header>
+    
+    
+    {% if app.user %}
+    <div><a href="{{path ('logout') }}">Déconnexion</a></div>
+    {% else %}        
+    <div><a href="{{path ('login')}}">CONNEXION</a></div>
+    {% endif %}
+    </header>
         {% block body %}{% endblock %}
+
+        <footer><button onclick="savePlayer()"> Sauvegarder</button></footer>
     </body>
 </html>

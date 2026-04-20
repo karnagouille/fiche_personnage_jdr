@@ -310,7 +310,6 @@ boutonmoins.forEach(bouton =>{
 })
 
 
-
 // UPDATE COMPETENCE
 
 
@@ -335,22 +334,16 @@ if (ancienValeur === undefined) {
         el.innerText = val + 1;
     }
 });
-
     }
-
     if (nouveau % 2===0 && nouveau < ancienValeur){
-    
-    element.forEach(el=>{
+        element.forEach(el=>{
     let val = Number(el.innerText);
-
     if (!isNaN(val)) {
         el.innerText = val - 1;
     }
 });
-
     }
-    
-    ancien[statType] = nouveau;
+        ancien[statType] = nouveau;
 }
 
 
@@ -436,6 +429,109 @@ bouton2.forEach(bouton => {
     });
 
 });
+
+
+
+
+const saveXp = number( document.getElementById("experience").innerText);
+
+
+const player ={
+
+    experience : saveXp
+}
+
+localStorage.setItem("player", JSON.stringify(player))
+
+
+
+
+// save
+
+
+function getPlayerData() {
+    return {
+        experience: Number(document.getElementById("experience").innerText),
+        maxExp: Number(document.getElementById("max_exp").innerText),
+
+        hp: Number(document.getElementById("count").innerText),
+        maxHp: Number(document.getElementById("maxdiv").innerText),
+
+        stats: {
+            force: Number(document.querySelector('[data-stat="for"] .statcount').innerText),
+            dexterite: Number(document.querySelector('[data-stat="dex"] .statcount').innerText),
+            constitution: Number(document.querySelector('[data-stat="const"] .statcount').innerText),
+            intelligence: Number(document.querySelector('[data-stat="int"] .statcount').innerText),
+            sagesse: Number(document.querySelector('[data-stat="sag"] .statcount').innerText),
+            charisme: Number(document.querySelector('[data-stat="cha"] .statcount').innerText),
+        }
+    };
+}
+
+function savePlayer() {
+    const data = getPlayerData();
+
+    fetch('/save-player', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => console.log("Saved :", res))
+    .catch(err => console.error(err));
+}
+
+function loadPlayer() {
+    fetch('/get-player')
+        .then(res => res.json())
+        .then(data => {
+            document.querySelector('[data-stat="for"] .statcount').innerText = data.force;
+            document.querySelector('[data-stat="dex"] .statcount').innerText = data.dexterite;
+            document.querySelector('[data-stat="const"] .statcount').innerText = data.constitution;
+            document.querySelector('[data-stat="int"] .statcount').innerText = data.intelligence;
+            document.querySelector('[data-stat="sag"] .statcount').innerText = data.sagesse;
+            document.querySelector('[data-stat="cha"] .statcount').innerText = data.charisme;
+        })
+        .catch(err => console.error(err));
+}
+
+window.onload = loadPlayer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -562,6 +658,7 @@ function registerStats() {
 /**
  * Sauvegarde les statistiques "experience"
  */
+/*
 function saveProfile() {
     const experienceElement = document.getElementById('experience')
     const experience = Number(experienceElement.innerText)
@@ -571,7 +668,7 @@ function saveProfile() {
 
 /**
  * Sauvegarde les statistiques "CA", "Initiative", "Vitesse", "Points de vie"
- */
+ *//*
 function saveHealthPoints() {
     const armorClassElement = document.getElementById('armor-class')
     const initiativeElement = document.getElementById('initiative')
@@ -588,7 +685,7 @@ function saveHealthPoints() {
         initiative: initiative,
         speed: speed,
         healthPoint: healthPoint,
-    })
+    })*/
     /*
         On sauvegarde donc ça :
         {
@@ -609,7 +706,7 @@ function saveHealthPoints() {
     // }
     // quand tu veux le récupérer :
     // localStorage.getItem('patate')
-}
+
 /*
 function saveStats() {}
 
